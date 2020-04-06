@@ -1,0 +1,13 @@
+# frozen_string_literal: true
+
+require "decidim/dev/common_rake"
+
+load "tasks/decidim/jitsi_meetings_tasks.rake"
+
+desc "Generates a dummy app for testing"
+task test_app: "decidim:generate_external_test_app" do
+  Dir.chdir("spec/decidim_dummy_app") do
+    sh("bin/rails decidim_jitsi_meetings:upgrade")
+    sh("RAILS_ENV=test bin/rails db:migrate")
+  end
+end
