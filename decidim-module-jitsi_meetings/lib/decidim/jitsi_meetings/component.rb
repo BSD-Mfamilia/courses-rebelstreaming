@@ -40,34 +40,19 @@ Decidim.register_component(:jitsi_meetings) do |component|
     resource.model_class_name = "Decidim::JitsiMeetings::JitsiMeeting"
   end
 
-  # component.on(:before_destroy) do |instance|
-  #   # Code executed before removing the component
-  # end
+  component.seeds do |participatory_space|
+    component = Decidim::Component.create!(
+      name: Decidim::Components::Namer.new(participatory_space.organization.available_locales, :jitsi_meetings).i18n_name,
+      manifest_name: :jitsi_meetings,
+      published_at: Time.current,
+      participatory_space: participatory_space
+    )
 
-  # These actions permissions can be configured in the admin panel
-  # component.actions = %w()
-
-  # component.settings(:global) do |settings|
-  #   # Add your global settings
-  #   # Available types: :integer, :boolean
-  #   # settings.attribute :vote_limit, type: :integer, default: 0
-  # end
-
-  # component.settings(:step) do |settings|
-  #   # Add your settings per step
-  # end
-
-  # component.register_resource(:some_resource) do |resource|
-  #   # Register a optional resource that can be references from other resources.
-  #   resource.model_class_name = "Decidim::JitsiMeetings::SomeResource"
-  #   resource.template = "decidim/jitsi_meetings/some_resources/linked_some_resources"
-  # end
-
-  # component.register_stat :some_stat do |context, start_at, end_at|
-  #   # Register some stat number to the application
-  # end
-
-  # component.seeds do |participatory_space|
-  #   # Add some seeds for this component
-  # end
+    Decidim::JitsiMeetings::JitsiMeeting.create!(
+      component: component,
+      api: "https://meet.jit.si/external_api.js",
+      domain: "meet.jit.si",
+      room_name: Faker::Name.unique.name,
+    )
+  end
 end
