@@ -1,0 +1,410 @@
+es:
+  activemodel:
+    attributes:
+      assembly:
+        area_id: Área
+        assembly_type: Tipo de aula
+        assembly_type_other: Otro tipo de aula
+        banner_image: Imagen de banner
+        closing_date: Fecha de cierre
+        closing_date_reason: Razón de la fecha de cierre
+        composition: Composición
+        copy_categories: Copiar categorías
+        copy_components: Copiar componentes
+        copy_features: Copiar funcionalidades
+        created_by: Creado por
+        created_by_other: Creado por otra
+        creation_date: Fecha de creacion
+        decidim_area_id: Área
+        decidim_assemblies_type_id: Tipo de aula
+        decidim_scope_id: Ámbito
+        description: Descripción
+        developer_group: Grupo promotor
+        domain: Dominio
+        duration: Duración
+        facebook: Facebook
+        github: GitHub
+        hashtag: Hashtag
+        hero_image: Imagen de portada
+        included_at: Incluido en
+        instagram: Instagram
+        internal_organisation: Metodología Estudio
+        is_transparent: Es transparente
+        local_area: Área de organización
+        meta_scope: Metadatos de ámbito
+        parent_id: aula principal
+        participatory_processes_ids: Procesos participativos relacionados
+        participatory_scope: Qué se estudia
+        participatory_structure: Cómo se estudia
+        private_space: Espacio privado
+        promoted: Destacado
+        published_at: Publicado el
+        purpose_of_action: Propósito del Aula
+        scope_id: Ámbito
+        scopes_enabled: Ámbitos habilitados
+        short_description: Descripción breve
+        show_statistics: Mostrar estadísticas
+        slug: Texto corto de URL
+        special_features: Características especiales
+        subtitle: Subtítulo
+        target: Quién participa
+        title: Título
+        twitter: Twitter
+        youtube: YouTube
+      assembly_member:
+        birthday: Cumpleaños
+        birthplace: Lugar de nacimiento
+        ceased_date: Fecha de cese
+        designation_date: Fecha de inscripción
+        designation_mode: Modo de inscripción
+        full_name: Nombre completo
+        gender: Skills
+        position: Posición
+      assembly_user_role:
+        email: Correo electrónico
+        name: Nombre
+        role: Rol de participante
+  activerecord:
+    models:
+      decidim/assembly:
+        one: aula
+        other: Aulas
+      decidim/assembly_member:
+        one: Miembro del aula
+        other: Miembros del aula
+      decidim/assembly_user_role:
+        one: Rol de participante del aula
+        other: Roles de participante del aula
+  decidim:
+    admin:
+      actions:
+        new_assembly: Nueva aula
+        new_assembly_type: Nuevo tipo de aula
+      assemblies:
+        create:
+          error: Se ha producido un error al crear una nueva aula.
+          success: aula creada correctamente.
+        edit:
+          update: Actualizar
+        index:
+          not_published: No publicada
+          private: Privado
+          public: Público
+          published: Publicado
+        new:
+          create: Crear
+          title: Nueva aula
+        update:
+          error: Se ha producido un error al actualizar esta aula.
+          success: La aula se ha actualizado correctamente.
+      assemblies_copies:
+        create:
+          error: Se ha producido un error al duplicar esta aula.
+          success: aula duplicada correctamente.
+      assemblies_types:
+        create:
+          error: Se ha producido un error al crear un nuevo tipo de aula.
+          success: Tipo de aula creado correctamente.
+        destroy:
+          success: Tipo de aula eliminado correctamente.
+        new:
+          create: Crear
+          title: Nuevo tipo de aula
+        update:
+          error: Hubo un problema al actualizar este tipo de aula.
+          success: Tipo de aula actualizado correctamente.
+      assembly_copies:
+        new:
+          copy: Copiar
+          select: Selecciona qué datos quieres duplicar
+          title: Duplicar aula
+      assembly_members:
+        create:
+          error: Se ha producido un error al agregar un miembro para esta aula.
+          success: Miembro creado correctamene para esta aula.
+        destroy:
+          success: Miembro eliminado correctamente para esta aula.
+        edit:
+          title: Actualizar miembro del aula.
+          update: Actualizar
+        index:
+          assembly_members_title: Miembros del aula
+        new:
+          create: Crear
+          title: Nuevo miembro del aula.
+        update:
+          error: Se ha producido un error al actualizar el miembro para esta aula.
+          success: Miembro actualizado correctamente para esta aula.
+      assembly_publications:
+        create:
+          error: Se ha producido un error al publicar esta aula.
+          success: aula publicada correctamente.
+        destroy:
+          error: Se ha producido un error al despublicar esta aula.
+          success: aula despublicada correctamente.
+      assembly_user_roles:
+        create:
+          error: Se ha producido un error al añadir una administradora para esta aula.
+          success: Administradora añadida correctamente a esta aula.
+        destroy:
+          success: Administradora eliminada correctamente de esta aula.
+        edit:
+          title: Actualizar administradora del aula.
+          update: Actualizar
+        index:
+          assembly_admins_title: Administradoras del aula
+        new:
+          create: Crear
+          title: Nueva administradora del aula.
+        update:
+          error: Se ha producido un error al actualizar una administradora para esta aula.
+          success: Administradora actualizada correctamente para esta aula.
+      menu:
+        assemblies: Aulas
+        assemblies_submenu:
+          assembly_admins: Administradoras del aula
+          assembly_members: Participantes
+          attachment_collections: Carpetas
+          attachment_files: Archivos
+          attachments: Adjuntos
+          categories: Categorías
+          components: Componentes
+          info: Información
+          moderations: Moderaciones
+          private_users: Participantes privadas
+        assemblies_types: Tipos de aula
+      models:
+        assemblies_types:
+          fields:
+            created_at: Creado el
+            title: Título
+        assembly:
+          fields:
+            created_at: Fecha de creación
+            private: Privada
+            promoted: Destacada
+            published: Publicada
+            title: Título
+          name: aula
+        assembly_member:
+          fields:
+            ceased_date: Fecha de cese
+            designation_date: Fecha de inscripción
+            full_name: Nombre
+            position: Posición
+          name: Miembro
+          positions:
+            other: Otro
+            president: Tutor/a
+            secretary: Colaborador/a
+            vice_president: Alumna/o
+        assembly_user_role:
+          fields:
+            email: Correo electrónico
+            name: Nombre
+            role: Rol
+          name: Administradora del aula
+          roles:
+            admin: Administradora
+            collaborator: Colaboradora
+            moderator: Moderadora
+            valuator: Evaluadora
+      titles:
+        assemblies: Aulas
+        assemblies_types: Tipo de aula
+    admin_log:
+      assembly:
+        create: "%{user_name} creó el aula %{resource_name}"
+        publish: "%{user_name} publicó el aula %{resource_name}"
+        unpublish: "%{user_name} despublicó el aula %{resource_name}"
+        update: "%{user_name} actualizó el aula %{resource_name}"
+      assembly_member:
+        create: "%{user_name} creó el miembro %{resource_name} en el aula %{space_name}"
+        delete: "%{user_name} eliminó %{resource_name} de el aula %{space_name}"
+        update: "%{user_name} actualizó el miembro %{resource_name} de el aula %{space_name}"
+      assembly_type:
+        create: "%{user_name} creó el tipo de aula %{resource_name}"
+        delete: "%{user_name} eliminó al miembro %{resource_name} del tipo de aula %{space_name}"
+        publish: "%{user_name} publicó el tipo de aula %{resource_name}"
+        unpublish: "%{user_name} despublicó el tipo de aula %{resource_name}"
+        update: "%{user_name} actualizó el tipo de aula %{resource_name}"
+      assembly_user_role:
+        create: "%{user_name} invitó %{resource_name} a el aula %{space_name}"
+        delete: "%{user_name} eliminó a la participante %{resource_name} de el aula %{space_name}"
+        update: "%{user_name} cambió el rol de %{resource_name} en el aula %{space_name}"
+    assemblies:
+      admin:
+        assemblies:
+          form:
+            duration: Duración
+            duration_help: Si la duración de esta aula es limitada, selecciona la fecha de finalización. De lo contrario, aparecerá como indefinida.
+            filters: Filtros
+            images: Imágenes
+            included_at_help: Selecciona la fecha en que se agregó esta aula a Decidim. No necesariamente tiene que ser la misma que la fecha de creación.
+            metadata: Metadatos
+            other: Otro
+            select_a_created_by: Selecciona una creadora
+            select_an_area: Seleccione un Área
+            select_an_assembly_type: Selecciona un tipo de aula
+            select_parent_assembly: Selecciona una aula principal
+            slug_help: 'Los textos cortos de URL se utilizan para generar las URL que apuntan a esta aula. Sólo acepta letras, números y guiones, y debe comenzar con una letra. Ejemplo: %{url}'
+            social_handlers: Social
+            title: Información general
+            visbility: Visibilidad
+        assemblies_types:
+          form:
+            title: Título
+        assembly_copies:
+          form:
+            slug_help: 'Los textos cortos de URL se utilizan para generar las URL que apuntan a esta aula. Sólo acepta letras, números y guiones, y debe comenzar con una letra. Ejemplo: %{url}'
+        assembly_members:
+          form:
+            existing_user: Participante existente
+            non_user: No participante
+            select_a_position: Selecciona una posición
+            select_user: Selecciona una participante
+            user_type: Tipo de participante
+          index:
+            filter:
+              all: Todas
+              ceased: Cesada
+              not_ceased: No cesada
+            filter_by: Filtra por
+            search: Buscar
+        content_blocks:
+          highlighted_assemblies:
+            max_results: Cantidad máxima de elementos para mostrar
+      assembly_members:
+        index:
+          members: Participantes
+      assembly_types:
+        commission: Comisión
+        consultative_advisory: Consultiva / Asesora
+        executive: Ejecutiva
+        government: Gobierno
+        others: Otros
+        participatory: Participativa
+        working_group: Grupo de trabajo
+      content_blocks:
+        highlighted_assemblies:
+          name: Aulas destacadas
+      created_by:
+        city_council: Ayuntamiento
+        others: Otros
+        public: Público
+      filter:
+        all: Todos los tipos
+        commission: Comisión
+        consultative_advisory: Consultiva / Asesora
+        executive: Ejecutivo
+        government: Gobierno
+        help: 'Muestra:'
+        others: Otros
+        participatory: Participativo
+        working_group: Grupo de trabajo
+      index:
+        title: Aulas
+      last_activity:
+        new_assembly: Nueva aula
+      pages:
+        home:
+          highlighted_assemblies:
+            active_assemblies: Aulas activas
+            see_all_assemblies: Ver todas las aulas
+        user_profile:
+          member_of:
+            member_of: Miembro de
+      show:
+        area: Área
+        assembly_type: Tipo de aulas
+        children: Aulas
+        closing_date: Fecha de finalización
+        composition: Composición
+        created_by: Creado por
+        creation_date: Fecha de creación
+        developer_group: Grupo promotor
+        duration: Duración
+        included_at: Incluido en
+        indefinite_duration: Indefinida
+        internal_organisation: Metodología Estudio
+        is_transparent:
+          'false': opaca
+          'true': transparente
+        local_area: Área de organización
+        participatory_scope: Qué se estudia
+        participatory_structure: Cómo se estudia
+        private_space: Esta es una aula privada
+        purpose_of_action: Propósito del Aula
+        read_less: Leer menos
+        read_more: Leer más
+        related_participatory_processes: Procesos participativos relacionados
+        scope: Ámbito
+        social_networks: Redes sociales
+        target: Quién participa
+      statistics:
+        answers_count: Respuestas
+        assemblies_count: Aulas
+        comments_count: Comentarios
+        debates_count: Debates
+        endorsements_count: Adhesiones
+        headline: Actividad
+        meetings_count: Encuentros
+        orders_count: Apoyos
+        pages_count: Páginas
+        projects_count: Proyectos
+        proposals_count: Propuestas
+        results_count: Resultados
+        surveys_count: Encuestas
+        users_count: Participantes
+        votes_count: Apoyos
+    assembly_members:
+      assembly_member:
+        designated_on: Inscrito el
+      index:
+        title: Participantes
+    help:
+      participatory_spaces:
+        assemblies:
+          contextual: "<p>Una <strong>aula</strong> es un grupo formado por miembros de una organización que se reúnen periódicamente para tomar decisiones sobre un ámbito o área específica de la misma.</p><p>Las aulas realizan encuentros, algunos son privados y otros son abiertos. Si son abiertos se puede participar en ellos (por ejemplo: asistiendo si el aforo lo permite, añadiendo puntos al orden del día, o comentando las propuestas y decisiones tomadas por dicho órgano).</p> <p>Ejemplos: Una aula general (que se reúne una vez al año para definir las líneas principales de acción de la organización así como para escojer a sus órganos ejecutivos por votación), una consejo asesor de igualdad (que se reúne cada dos meses para realizar propuestas de cómo mejorar las relaciones de género en la organización), una comisión de evaluación (que se reúne cada mes para realizar el seguimiento de un proceso) o un órgano de garantías (que recoge las incidencias, abusos o propuestas de mejora de los procedimientos de toma de decisiones) son todo ejemplos de aulas.</p>\n"
+          page: "<p>Una <strong>aula</strong> es un grupo formado por miembros de una organización que se reúnen periódicamente para tomar decisiones sobre un ámbito o área específica de la misma.</p><p>Las aulas realizan encuentros, algunos son privados y otros son abiertos. Si son abiertos se puede participar en ellos (por ejemplo: asistiendo si el aforo lo permite, añadiendo puntos al orden del día, o comentando las propuestas y decisiones tomadas por dicho órgano).</p> <p>Ejemplos: Una aula general (que se reúne una vez al año para definir las líneas principales de acción de la organización así como para escojer a sus órganos ejecutivos por votación), una consejo asesor de igualdad (que se reúne cada dos meses para realizar propuestas de cómo mejorar las relaciones de género en la organización), una comisión de evaluación (que se reúne cada mes para realizar el seguimiento de un proceso) o un órgano de garantías (que recoge las incidencias, abusos o propuestas de mejora de los procedimientos de toma de decisiones) son todo ejemplos de aulas.</p>\n"
+          title: '¿Qué son las aulas?'
+    log:
+      value_types:
+        assembly_presenter:
+          not_found: 'No se encontró el aula en la base de datos (ID: %{id})'
+        assembly_type_presenter:
+          not_found: 'El tipo de aula no se encontró en la base de datos (ID: %{id})'
+    menu:
+      assemblies: Aulas
+    metrics:
+      assemblies:
+        description: Número de aulas creadas
+        object: aulas
+        title: Aulas
+  errors:
+    messages:
+      cannot_be_blank: no puede estar en blanco
+  layouts:
+    decidim:
+      assemblies:
+        assembly:
+          more_info: Más información
+          take_part: Participa
+        index:
+          children: 'Aulas: '
+          organizational_chart: Organigrama
+          promoted_assemblies: Aulas destacadas
+          reset_chart: Restablecer
+        order_by_assemblies:
+          assemblies:
+            one: "%{count} aulas"
+            other: "%{count} aulas"
+        promoted_assembly:
+          more_info: Más información
+          take_part: Participa
+      assembly_navigation:
+        assembly_member_menu_item: Participantes
+        assembly_menu_item: El Aula
+      assembly_widgets:
+        show:
+          take_part: Participa
