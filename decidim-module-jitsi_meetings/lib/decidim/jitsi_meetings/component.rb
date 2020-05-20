@@ -50,9 +50,9 @@ Decidim.register_component(:jitsi_meetings) do |component|
 
     Decidim::JitsiMeetings::JitsiMeeting.create!(
       component: component,
-      api: "https://meet.jit.si/external_api.js",
-      domain: "meet.jit.si",
-      room_name: Faker::Name.unique.name,
+      api: {"ca": "https://meet.jit.si/external_api.js", "en": "https://meet.jit.si/external_api.js", "es": "https://meet.jit.si/external_api.js"},
+      domain: {"ca": "meet.jit.si", "en": "meet.jit.si", "es": "meet.jit.si"},
+      room_name: {"ca": Faker::Name.unique.name, "en": Faker::Name.unique.name, "es": Faker::Name.unique.name},
     )
   end
 end
