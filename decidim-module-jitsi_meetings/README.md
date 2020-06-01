@@ -1,29 +1,43 @@
-# Decidim::JitsiMeetings
+# Decidim::JitsiVideoconference
+![Build](https://github.com/alabs/decidim-module-calendar/workflows/Ruby/badge.svg)
+[![Coverage](https://img.shields.io/codeclimate/coverage/alabs/decidim-module-calendar.svg)](https://codeclimate.com/github/alabs/decidim-module-calendar)
+[![Maintainability](https://img.shields.io/codeclimate/maintainability/alabs/decidim-module-calendar.svg)](https://codeclimate.com/github/alabs/decidim-module-calendar/maintainability)
 
-Jitsi Meetings integration..
+This module of [Decidim](https://decidim.org/) allows to deploy public or private videoconference rooms of any [jitsi](https://meet.jit.si/) server in participative processes and assemblies.
 
-## Usage
-
-JitsiMeetings will be available as a Component for a Participatory
-Space.
+![decidim-jitsimeetings](decidim-jitsi.jpg)
 
 ## Installation
 
-Add this line to your application's Gemfile:
+> NOTE: This module is ready to use but in Beta status. Feel free to report any bug! compatible and tested in versions Decidim 0.20 and 0.21.
+
+1.- Add this line to your application's Gemfile:
 
 ```ruby
-gem 'decidim-jitsi_meetings
+gem "decidim-jitsi-videoconference", :git => 'https://github.com/alabs/decidim-module-jitsi-videoconference.git'
 ```
 
-And then execute:
+2.- Run this rake tasks:
 
 ```bash
-bundle
+bundle intall
+rake decidim_meetings:install:migrations
+bundle exec rake db:migrate
 ```
+
+## Usage
+
+JitsiMeetings will be available as a Component for a Participatory Space (participative processes and assemblies)
+
+![decidim-jitsi-deploy](module-jitsi-deploy.png)
+
+To configure the module you only need to add three parameters, the server API access url, the jitsi server domain and the room name for the assembly or participatory process:
+
+![decidim-jitsi-config](module-jitsi-config.png)
 
 ## Contributing
 
-See [Decidim](https://github.com/decidim/decidim).
+For instructions how to setup your development environment for Decidim, see [Decidim](https://github.com/decidim/decidim). Also follow Decidim's general instructions for development for this project as well.
 
 ## License
 

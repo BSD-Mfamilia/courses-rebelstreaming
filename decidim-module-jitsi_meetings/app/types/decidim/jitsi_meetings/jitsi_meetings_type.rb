@@ -2,7 +2,7 @@
 
 module Decidim
   module JitsiMeetings
-    PagesType = GraphQL::ObjectType.define do
+    JitsiMeetingsType = GraphQL::ObjectType.define do
       interfaces [-> { Decidim::Core::ComponentInterface }]
 
       name "JitsiMeetings"
@@ -10,7 +10,7 @@ module Decidim
 
       connection :jitsi_meetings, JitsiMeetingType.connection_type do
         resolve ->(component, _args, _ctx) {
-                  JitsiMeetingTypeHelper.base_scope(component).includes(:component)
+                  JitsiMeetingsTypeHelper.base_scope(component).includes(:component)
                 }
       end
 
@@ -18,12 +18,12 @@ module Decidim
         argument :id, !types.ID
 
         resolve ->(component, args, _ctx) {
-          JitsiMeetingTypeHelper.base_scope(component).find_by(id: args[:id])
+          JitsiMeetingsTypeHelper.base_scope(component).find_by(id: args[:id])
         }
       end
     end
 
-    module JitsiMeetingTypeHelper
+    module JitsiMeetingsTypeHelper
       def self.base_scope(component)
         JitsiMeeting.where(component: component)
       end
