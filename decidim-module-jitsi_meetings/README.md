@@ -21,7 +21,7 @@ gem 'decidim-jitsi_meetings', git: 'https://github.com/BSD-Mfamilia/courses-rebe
 
 ```bash
 bundle intall
-rake decidim_meetings:install:migrations
+rake decidim_jitsi_meetings:install:migrations
 bundle exec rake db:migrate
 ```
 
