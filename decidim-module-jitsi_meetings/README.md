@@ -14,7 +14,7 @@ This module of [Decidim](https://decidim.org/) allows to deploy public or privat
 1.- Add this line to your application's Gemfile:
 
 ```ruby
-gem "decidim-jitsi_meetings", :git => 'https://github.com/alabs/decidim-module-jitsi-videoconference.git'
+gem 'decidim-jitsi_meetings', git: 'https://github.com/BSD-Mfamilia/courses-rebelstreaming', glob: 'decidim-module-jitsi_meetings/*.gemspec'
 ```
 
 2.- Run this rake tasks:
