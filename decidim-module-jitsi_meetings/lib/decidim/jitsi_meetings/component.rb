@@ -28,6 +28,13 @@ Decidim.register_component(:jitsi_meetings) do |component|
     end
   end
 
+  component.register_stat :jitsi_meetings_count do |components, start_at, end_at|
+    jitsi_meetings = Decidim::JitsiMeetings::JitsiMeeting.where(component: components)
+    jitsi_meetings = pages.where("created_at >= ?", start_at) if start_at.present?
+    jitsi_meetings = pages.where("created_at <= ?", end_at) if end_at.present?
+    jitsi_meetings.count
+  end
+
   component.settings(:global) do |settings|
     settings.attribute :announcement, type: :text, translated: true, editor: true
   end

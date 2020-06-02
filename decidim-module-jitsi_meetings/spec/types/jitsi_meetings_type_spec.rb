@@ -16,10 +16,10 @@ module Decidim
         let!(:component_jitsi_meetings) { create_list(:jitsi_meeting, 2, component: model) }
         let!(:other_jitsi_meetings) { create_list(:jitsi_meeting, 2) }
 
-        let(:query) { "{ jitsi_meeting { edges { node { id } } } }" }
+        let(:query) { "{ jitsi_meetings { edges { node { id } } } }" }
 
-        it "returns the published jitsi_meeting" do
-          ids = response["jitsi_meeting"]["edges"].map { |edge| edge["node"]["id"] }
+        it "returns the published jitsi_meetings" do
+          ids = response["jitsi_meetings"]["edges"].map { |edge| edge["node"]["id"] }
           expect(ids).to include(*component_jitsi_meetings.map(&:id).map(&:to_s))
           expect(ids).not_to include(*other_jitsi_meetings.map(&:id).map(&:to_s))
         end

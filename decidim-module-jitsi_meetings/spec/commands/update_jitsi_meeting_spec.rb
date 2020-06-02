@@ -19,7 +19,7 @@ module Decidim
           }
         end
         let(:form) do
-            JitsiMeetingForm.from_params(
+          JitsiMeetingForm.from_params(
             form_params
           ).with_context(
             current_user: user,
@@ -37,7 +37,7 @@ module Decidim
             expect { command.call }.to broadcast(:invalid)
           end
 
-          it "doesn't update the jitsi_meeting" do
+          it "doesn't update the page" do
             expect(jitsi_meeting).not_to receive(:update!)
             command.call
           end
@@ -48,7 +48,7 @@ module Decidim
             expect { command.call }.to broadcast(:ok)
           end
 
-          it "creates a new jitsi_meeting with the same name as the component" do
+          it "creates a new page with the same name as the component" do
             expect(jitsi_meeting).to receive(:update!)
             command.call
           end
@@ -56,7 +56,7 @@ module Decidim
           it "traces tyhe action", versioning: true do
             expect(Decidim.traceability)
               .to receive(:update!)
-              .with(jitsi_meeting, user, api: form.api, domain: form.domain, room_name: form.room_name)
+              .with(jitsi_meeting, user, api: form.api, domain: form.domain, room_name: form.room_name) 
               .and_call_original
 
             expect { command.call }.to change(Decidim::ActionLog, :count)

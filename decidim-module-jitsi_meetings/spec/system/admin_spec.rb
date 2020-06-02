@@ -59,7 +59,7 @@ describe "Edit a jitsi_meeting", type: :system do
 
   describe "announcements" do
     before do
-      create(:jitsi_meeting, component: component, body: body)
+      create(:jitsi_meeting, component: component, api: api, domain: domain, room_name: room_name)
       visit_component_admin
     end
 

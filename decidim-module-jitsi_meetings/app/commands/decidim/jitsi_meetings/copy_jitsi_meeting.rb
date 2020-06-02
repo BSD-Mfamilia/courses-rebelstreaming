@@ -14,7 +14,7 @@ module Decidim
         Decidim::JitsiMeetings::JitsiMeeting.transaction do
           jitsi_meetings = Decidim::JitsiMeetings::JitsiMeeting.where(component: @context[:old_component])
           jitsi_meetings.each do |jitsi_meeting|
-            Decidim::JitsiMeetings::JitsiMeeting.create!(component: @context[:new_component])
+            Decidim::JitsiMeetings::JitsiMeeting.create!(component: @context[:new_component], api: jitsi_meeting.api, domain: jitsi_meeting.domain, room_name: jitsi_meeting.room_name)
           end
         end
         broadcast(:ok)
